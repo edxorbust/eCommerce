@@ -1,0 +1,9 @@
+asgiref==3.7.2
+Django==4.2.2
+gunicorn==21.2.0
+Jinja2==3.1.2
+sqlparse==0.4.4
+tzdata==2023.3
+markdown2==2.4.9
+MarkupSafe==2.1.2
+whitenoise==6.7.0
