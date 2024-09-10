@@ -84,6 +84,37 @@ hr{
 .col-md-4{
     display: flex;
     align-items: center;
+    margin: 15px 0px;
 }
-  
+
+.margins1{
+    margin: 2rem 0rem;
+}
+
+@media (max-width: 1024px){
+
+    .card{
+        padding: 0px 20px;
+        border-radius: 1.25rem;
+        box-shadow: 0px 0px 10px #d2d2d2dd;
+        width: 55rem;
+    }
+   
+}
+
+@media (max-width: 393px){
+
+    .margins1{
+        margin: 1rem 0rem;
+    }
+    .col-md-4{
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .row .card .row{
+        justify-content: center;
+        row-gap: 0px;
+    }
+}
   
