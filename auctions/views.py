@@ -71,12 +71,23 @@ def newComment(request, id):
 def displayCategory(request):
     if request.method == "POST":
         categories = Category.objects.all()
-        categoryFiltered = Category.objects.get( categoryName = request.POST["category"])
-        categoryListing = Listing.objects.filter( category = categoryFiltered, isActive = True)
-        return render(request, "auctions/index.html", {
-            "listings": categoryListing,
-            "categories": categories
-        })
+        try:
+            categoryFiltered = Category.objects.get( categoryName = request.POST["category"])
+            categoryListing = Listing.objects.filter( category = categoryFiltered, isActive = True)
+            if not categoryListing:
+                return render(request, "auctions/index.html", {
+                "listings": None,
+                "categories": categories
+                })
+            return render(request, "auctions/index.html", {
+                "listings": categoryListing,
+                "categories": categories
+                })
+        except Category.DoesNotExist:
+            return render(request, "auctions/index.html", {
+                "listings": None,
+                "categories": categories
+            })
 
 def createListing(request):
     if request.method == "GET":
