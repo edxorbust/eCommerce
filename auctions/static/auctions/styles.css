@@ -116,5 +116,10 @@ hr{
         justify-content: center;
         row-gap: 0px;
     }
+    .nav{
+        gap: 0px;
+        font-size: 11px;
+        margin-top: 10px;
+    }
 }
   
