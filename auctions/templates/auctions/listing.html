@@ -1,7 +1,8 @@
 {% extends "auctions/layout.html" %} {% block body %}
-
-<h2>Listing: {{ listing.title }}</h2>
-{% if not listing.isActive and user.is_authenticated %}
+<div class="container-center quicksand">
+  <h2 class="oswald">Listing: {{ listing.title }}</h2>
+  <div class="mt-3">
+    {% if not listing.isActive and user.is_authenticated %}
   {% if listing.winner == user.username %}
     <div class="alert alert-success" role="alert">
       Congratulations, you won this auction!
@@ -65,12 +66,12 @@
   <input type="submit" class="btn btn-primary" value="Add a Bid" />
 </form>
 {% endif %}
-<h3>Details:</h3>
+<h3 class="mt-3 oswald">Details:</h3>
 <ul>
   <li>Listed by: {{ listing.owner }}</li>
   <li>Category: {{ listing.category }}</li>
 </ul>
-<h3>Comments</h3>
+<h3 class="oswald">Comments</h3>
 <ul>
 {% for comment in comments %}
     <li>{{ comment.message }} <p style="color:#595959; font-style:italic;">by {{ comment.author }}</p></li>
@@ -100,3 +101,7 @@
     {% endblock %}
   </div>
 </form>
+  </div>
+
+</div>
+
